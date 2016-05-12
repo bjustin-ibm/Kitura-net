@@ -295,7 +295,7 @@ public class ClientRequest: SocketWriter {
         //curlHelperSetOptInt(handle, CURLOPT_VERBOSE, 1)
 
         // hack change to disable SSL cert verification
-        curlHelperSetOptBool(handle!, CURLOPT_SSL_VERIFYHOST, CURL_FALSE)
+        curlHelperSetOptInt(handle!, CURLOPT_SSL_VERIFYHOST, CURL_FALSE)
         curlHelperSetOptInt(handle!, CURLOPT_SSL_VERIFYPEER, 0)
     }
 
