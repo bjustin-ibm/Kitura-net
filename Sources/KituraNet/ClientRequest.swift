@@ -293,6 +293,10 @@ public class ClientRequest: SocketWriter {
 
         // To see the messages sent by libCurl, uncomment the next line of code
         //curlHelperSetOptInt(handle, CURLOPT_VERBOSE, 1)
+
+        // hack change to disable SSL cert verification
+        curlHelperSetOptBool(handle!, CURLOPT_SSL_VERIFYHOST, CURL_FALSE)
+        curlHelperSetOptInt(handle!, CURLOPT_SSL_VERIFYPEER, 0)
     }
 
     ///
